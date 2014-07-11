@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" 
+           Name="ApplicationInstaller" 
+           Language="1049" 
+           Version="1.0.0.0" 
+           Manufacturer="MyCompany" 
+           UpgradeCode="ceed7874-addb-4b86-af85-e6feb748b6c1">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    
+    <Property Id="SERVER_PORT" Value="8888"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLLOCATION" Name="ApplicationServer" />
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="ApplicationServer" />
+      </Directory>
+    </Directory>
+
+	  <Feature Id="ProductFeature" Title="ApplicationInstaller" Level="1">
+			<ComponentRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcuts"/>
+		</Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION"></Property>
+    <UIRef Id="WixUI_ServerMaster"/>
+	</Product>
+</Wix>

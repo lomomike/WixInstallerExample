@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="ru-ru" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+    <String Id="msierrUSRFailedUserCreate" Overridable="yes">Не удалось создать пользователя.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserCreatePswd" Overridable="yes">Не удалось создать пользователя из-за недопустимого пароля.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserGroupAdd" Overridable="yes">Не удалось добавить пользователя в группу.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUSRFailedUserCreateExists" Overridable="yes">Не удалось создать пользователя потому что он уже существует.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrSMBFailedCreate" Overridable="yes">Не удалось открыть общий доступ к папке.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrSMBFailedDrop" Overridable="yes">Не удалось отменить общий доступ к папке.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrPERFMONFailedRegisterDLL" Overridable="yes">Не удалось зарегистрировать DLL для PerfMon.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrPERFMONFailedUnregisterDLL" Overridable="yes">Не удалось удалить регистрацию DLL для PerfMon.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrInstallPerfCounterData" Overridable="yes">Не удалось установить счетчики производительности.  ([2]   [3]   [4]   [5])</String>
+    <String Id="msierrUninstallPerfCounterData" Overridable="yes">Не удалось удалить счетчики производительности.  ([2]   [3]   [4]   [5])</String>
+
+    <String Id="msierrSecureObjectsFailedCreateSD" Overridable="yes">Не удалось создать дескриптор безопасности для [3]\[4], ошибка: [2]</String>
+    <String Id="msierrSecureObjectsFailedSet" Overridable="yes">Не удалось установить дескриптор безопасности для [3], ошибка: [2]</String>
+    <String Id="msierrSecureObjectsUnknownType" Overridable="yes">Неизвестный тип объекта [3], ошибка: [2]</String>
+
+    <String Id="msierrXmlFileFailedRead" Overridable="yes">Произошла ошибка при конфигурировании XML файлов.</String>
+    <String Id="msierrXmlFileFailedOpen" Overridable="yes">Не удалось открыть XML файл [3], ошибка: [2]</String>
+    <String Id="msierrXmlFileFailedSelect" Overridable="yes">Не удалось найти узел: [3] в XML файле: [4], ошибка: [2]</String>
+    <String Id="msierrXmlFileFailedSave" Overridable="yes">Не удалось сохранить изменения в XML файле [3], ошибка: [2]</String>
+
+    <String Id="msierrXmlConfigFailedRead" Overridable="yes">Произошла ошибка при конфигурировании XML файлов.</String>
+    <String Id="msierrXmlConfigFailedOpen" Overridable="yes">Не удалось открыть XML файл [3], ошибка:</String>
+    <String Id="msierrXmlConfigFailedSelect" Overridable="yes">Не удалось найти узел: [3] в XML файле: [4], ошибка: [2]</String>
+    <String Id="msierrXmlConfigFailedSave" Overridable="yes">Не удалось сохранить изменения в XML файле [3], ошибка: [2]</String>
+</WixLocalization>
