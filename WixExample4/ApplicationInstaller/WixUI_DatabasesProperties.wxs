@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <UI>
+      <Dialog Id="DatabasesPropertiesDlg" Width="370" Height="270" Title="!(loc.WelcomeDlg_Title)">
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes" Text="Настройки подключения к базам данных" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes" Text="{\WixUI_Font_Title}Базы данных" />
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="!(loc.InstallDirDlgBannerBitmap)" />
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+
+        <Control Id="Next" Type="PushButton" X="248" Y="243" Width="56" Height="17" Default="yes" Text="!(loc.WixUINext)" />
+        <Control Id="Back" Type="PushButton" X="192" Y="243" Width="56" Height="17" Text="!(loc.WixUIBack)" />
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="!(loc.WixUICancel)">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+
+        <!-- Группа настроек для подключения к Data-->
+        <Control Type="GroupBox" Id="DataConnectionString" Width="350" Height="90" X="11" Y="49" Text="Строка подключения к базе данных" />
+        <Control Type="Text" Id="DataServerText" Width="37" Height="11" X="22" Y="66" Text="Сервер:" />
+        <Control Type="Edit" Id="DataServerEdit" Width="120" Height="15" X="64" Y="64" Property="DATA_SERVER" />
+        <Control Type="Text" Id="DataDbText" Width="30" Height="17" X="195" Y="66" Text="База:" />
+        <Control Type="Edit" Id="DataDbEdit" Width="120" Height="15" X="225" Y="64" Property="DATA_DB" />
+        <Control Type="Text" Id="DataLoginText" Width="38" Height="17" X="22" Y="90" Text="Логин:" />
+        <Control Type="Edit" Id="DataLoginEdit" Width="120" Height="15" X="64" Y="86" Property="DATA_LOGIN" />
+        <Control Type="Text" Id="DataPasswordText" Width="34" Height="17" X="188" Y="90" Text="Пароль:" />
+        <Control Type="Edit" Id="DataPasswordEdit" Width="120" Height="15" X="225" Y="86" Password="yes"  Property="DATA_PASSWORD" />
+        <Control Type="PushButton" Id="DataCheck" Width="56" Height="17" X="289" Y="109" Text="Проверить" >
+          <Publish Event="DoAction" Value="CheckDataDb" Order="1">1</Publish>
+          <Publish Event="SpawnDialog" Value="DataConnectedDlg" Order="2">DATACHECKED</Publish>
+        </Control>
+
+      </Dialog>
+
+      <Dialog Id="DataConnectedDlg" Width="250" Height="80" Title="Внимание">
+        <Control Type="Text" Id="textQuestion" Width="195" Height="17" X="28" Y="15" Text="[DATACHECKED]" />
+        <Control Type="PushButton" Id="buttonCancel" Width="70" Height="17" X="90" Y="52" Text="OK">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+      </Dialog>
+    </UI>
+	</Fragment>
+</Wix>

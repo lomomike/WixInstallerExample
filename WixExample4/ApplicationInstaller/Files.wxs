@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION" 
+                  FileSource="..\..\InstallingApplication\ApplicationWindowsService\bin\Debug\">
+      <Component Id ="ProductComponents" 
+                 DiskId="1" 
+                 Guid="{B65CDCEE-7130-4759-A8E8-16D84717CCF2}">
+        <File Id="ApplicationService.Common.dll" Name="ApplicationService.Common.dll"/>
+        <File Id="ApplicationWindowsService.exe" Name="ApplicationWindowsService.exe"/>
+        <File Id="log4net.dll" Name="log4net.dll"/>
+
+        <File Id="ApplicationWindowsService.exe.config" Name="ApplicationWindowsService.exe.config"/>
+        <!-- НАСТРОЙКА ПОРТА СЕРВЕРА-->
+        <util:XmlFile Id="AppConfigServerPort"
+                      Action="setValue"
+                      Permanent="yes"
+                      File="[#ApplicationWindowsService.exe.config]"
+                      ElementPath="/configuration/system.serviceModel/services/service[\[]@name='ApplicationService.Common.ApplicationService'[\]]/host/baseAddresses/add/@baseAddress"
+                      Value="net.tcp://localhost:[SERVER_PORT]/ApplicationService/"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

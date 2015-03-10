@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <?define Version="1.0.4.0"?>
+  
+	<?define DefaultPort="8888"?>
+
+  <?define ProductName="ApplicationInstaller"?>
+  <?define Manufacturer="MySoftInc"?>
+
+  <?define InstallLocation="ApplicationServer"?>
+</Include>
